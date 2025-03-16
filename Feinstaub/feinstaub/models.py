@@ -22,3 +22,21 @@ class SDS011Metric(models.Model):
     
     def __str__(self):
         return f"SDS011 Sensor {self.sensor_id} - {self.timestamp}"
+    
+
+class DHT22Metric(models.Model):
+    id = models.AutoField(primary_key=True)  # Automatische Primärschlüssel-ID
+    sensor_id = models.IntegerField()  # ID des Sensors
+    sensor_type = models.CharField(max_length=50)  # Typ des Sensors (DHT22)
+    location = models.CharField(max_length=255, blank=True, null=True)  # Optionaler Standortname
+    lan = models.FloatField()  # Breitengrad
+    lon = models.FloatField()  # Längengrad
+    timestamp = models.DateTimeField(auto_now_add=True)  # Zeitstempel der Messung
+    temperature = models.FloatField()  # Temperatur
+    humidity = models.FloatField()  # Luftfeuchtigkeit
+
+    class Meta:
+        db_table = "dht22_metric"
+    
+    def __str__(self):
+        return f"DHT22 Sensor {self.sensor_id} - {self.timestamp}"
