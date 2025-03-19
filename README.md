@@ -9,7 +9,8 @@
 
 
 ## Get started with Django
-1. install pip https://pip.pypa.io/en/latest/installation/
+1. install pip https://pip.pypa.io/en/latest/installation/ 
+    check: pip --version
 
 2. create virtual invironment 
 

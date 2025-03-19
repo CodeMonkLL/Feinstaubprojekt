@@ -1,4 +1,4 @@
-from django.db import models;
+from django.db import models
 
 class SDS011Metric(models.Model):
     id = models.AutoField(primary_key=True)  # Automatische Primärschlüssel-ID
