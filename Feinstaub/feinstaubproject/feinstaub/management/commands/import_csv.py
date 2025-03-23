@@ -39,25 +39,26 @@ class Command(BaseCommand):
                                 csv_out.write(gz_file.read())
 
                         with open(local_csv_path, 'r', encoding='utf-8') as file:
-                            csv_reader = csv.DictReader(file)
+                            csv_reader = csv.DictReader(file, delimiter=';')
                             for row in csv_reader:
                                 try:
                                     metric = DHT22Metric(
                                         sensor_id=int(row['sensor_id']),
                                         sensor_type=row.get('sensor_type', 'DHT22'),
                                         location=row.get('location', ''),
-                                        lan=float(row['lat']),
+                                        lat=float(row['lat']),
                                         lon=float(row['lon']),
                                         timestamp=datetime.strptime(row['timestamp'], "%Y-%m-%dT%H:%M:%S"),
                                         temperature=float(row['temperature']),
                                         humidity=float(row['humidity'])
                                     )
                                     metric.save()
+                                    self.stdout.write(self.style.SUCCESS(f"✅ Saved: Sensor {metric.sensor_id} at {metric.timestamp}")
                                 except (ValueError, IntegrityError) as e:
                                     self.stdout.write(self.style.WARNING(f"⚠️ Skiped: {e}"))
 
-                        os.remove(local_gz_path)
-                        os.remove(local_csv_path)
+                        # os.remove(local_gz_path)
+                        # os.remove(local_csv_path)
                         self.stdout.write(self.style.SUCCESS(f"🗑️ Delete temporary files: {local_gz_path}, {local_csv_path}"))
 
                     else:

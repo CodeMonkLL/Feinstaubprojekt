@@ -29,7 +29,7 @@ class DHT22Metric(models.Model):
     sensor_id = models.IntegerField()  # ID des Sensors
     sensor_type = models.CharField(max_length=50)  # Typ des Sensors (DHT22)
     location = models.CharField(max_length=255, blank=True, null=True)  # Optionaler Standortname
-    lan = models.FloatField()  # Breitengrad
+    lat = models.FloatField()  # Breitengrad
     lon = models.FloatField()  # Längengrad
     timestamp = models.DateTimeField(auto_now_add=True)  # Zeitstempel der Messung
     temperature = models.FloatField()  # Temperatur
