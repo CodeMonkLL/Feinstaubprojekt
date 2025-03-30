@@ -1,7 +1,3 @@
-Natürlich! Hier ist ein Beispiel für eine **README**-Datei für dein Konsolenprojekt:
-
----
-
 # Feinstaub Konsolenanwendung
 
 Dieses Projekt ist eine Konsolenanwendung, die es ermöglicht, Feinstaubdaten in eine SQLite-Datenbank zu laden und diese anschließend nach verschiedenen Kriterien abzurufen. Die Anwendung nutzt Python und arbeitet direkt mit der SQLite-Datenbank über SQL, ohne ein ORM (Object-Relational Mapping).
