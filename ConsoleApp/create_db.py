@@ -21,35 +21,35 @@ def create_tables():
 
         # Erstellen der dht22_metric Tabelle
         cursor.execute('''
-        CREATE TABLE IF NOT EXISTS dht22_metric (
+        CREATE TABLE dht22_metric (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             sensor_id INTEGER NOT NULL,
             sensor_type TEXT NOT NULL,
             location TEXT,
-            lat REAL NOT NULL,
-            lon REAL NOT NULL,
-            timestamp TEXT NOT NULL,
-            temperature REAL NOT NULL,
-            humidity REAL NOT NULL
+            lat FLOAT,
+            lon FLOAT,
+            timestamp TEXT,
+            temperature FLOAT NOT NULL,
+            humidity FLOAT NOT NULL
         );
         ''')
 
         # Erstellen der sds011_metric Tabelle
         cursor.execute('''
-        CREATE TABLE IF NOT EXISTS sds011_metric (
+        CREATE TABLE sds011_metric (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             sensor_id INTEGER NOT NULL,
             sensor_type TEXT NOT NULL,
             location TEXT,
-            lat REAL NOT NULL,
-            lon REAL NOT NULL,
-            timestamp TEXT NOT NULL,
-            P1 REAL NOT NULL,
-            durP1 REAL NOT NULL,
-            ratioP1 REAL NOT NULL,
-            P2 REAL NOT NULL,
-            durP2 REAL NOT NULL,
-            ratioP2 REAL NOT NULL
+            lat FLOAT,
+            lon FLOAT,
+            timestamp TEXT,
+            P1 FLOAT NOT NULL,
+            durP1 FLOAT NOT NULL,
+            ratioP1 FLOAT NOT NULL,
+            P2 FLOAT NOT NULL,
+            durP2 FLOAT NOT NULL,
+            ratioP2 FLOAT NOT NULL
         );
         ''')
 
