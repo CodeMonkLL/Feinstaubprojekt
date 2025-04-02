@@ -7,7 +7,7 @@ class SDS011Metric(models.Model):
     location = models.CharField(max_length=255, blank=True, null=True)  # Optionaler Standortname
     lat = models.FloatField()  # Breitengrad
     lon = models.FloatField()  # Längengrad
-    timestamp = models.DateTimeField(auto_now_add=True)  # Zeitstempel der Messung
+    timestamp = models.DateTimeField()  # Zeitstempel der Messung
 
     # Feinstaubwerte
     P1 = models.FloatField()  # Feinstaub PM10
@@ -31,7 +31,7 @@ class DHT22Metric(models.Model):
     location = models.CharField(max_length=255, blank=True, null=True)  # Optionaler Standortname
     lat = models.FloatField()  # Breitengrad
     lon = models.FloatField()  # Längengrad
-    timestamp = models.DateTimeField(auto_now_add=True)  # Zeitstempel der Messung
+    timestamp = models.DateTimeField()  # Zeitstempel der Messung
     temperature = models.FloatField()  # Temperatur
     humidity = models.FloatField()  # Luftfeuchtigkeit
 
