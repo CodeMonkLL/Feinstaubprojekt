@@ -45,11 +45,11 @@ def create_tables():
             lon FLOAT,
             timestamp TEXT,
             P1 FLOAT NOT NULL,
-            durP1 FLOAT NOT NULL,
-            ratioP1 FLOAT NOT NULL,
+            durP1 FLOAT,
+            ratioP1 FLOAT,
             P2 FLOAT NOT NULL,
-            durP2 FLOAT NOT NULL,
-            ratioP2 FLOAT NOT NULL
+            durP2 FLOAT,
+            ratioP2 FLOAT
         );
         ''')
 
