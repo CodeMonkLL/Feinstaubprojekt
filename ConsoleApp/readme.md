@@ -55,3 +55,30 @@ Du kannst die Feinstaubdaten nach einem bestimmten Zeitraum abrufen. Dies kann e
 - Das CSV-Datenformat für den Import sollte den entsprechenden Feinstaubdaten entsprechen (siehe `data_loader.py` für das genaue Format).
 
 ```
+
+
+Dateibeschreibungen
+
+    delete_db.py
+    Löscht die SQLite-Datenbank feinstaub.db, um das Projekt mit einer frischen Datenbank neu zu starten.
+
+    download.py
+    Diese Datei enthält Funktionen, um Feinstaubdaten von einer externen Quelle herunterzuladen. Sie speichert die Daten als CSV-Dateien im Ordner downloads/.
+
+    read_all_data.py
+    Ruft alle Feinstaubdaten aus der Datenbank ab und ermöglicht die Verarbeitung und Anzeige dieser Daten für verschiedene Sensoren (DHT22, SDS011).
+
+    unzip.py
+    Entpackt die heruntergeladenen .csv.gz Dateien im Ordner downloads/ und stellt sicher, dass sie für den nächsten Schritt (Datenbankimport) bereit sind.
+
+    write_csv_to_db.py
+    Liest die CSV-Dateien aus dem downloads/ Ordner und fügt die Daten in die SQLite-Datenbank (feinstaub.db) ein. Es wird überprüft, ob die Dateien dem richtigen Format entsprechen (DHT22 oder SDS011).
+
+    create_db.py
+    Erstellt die SQLite-Datenbank (feinstaub.db) und definiert die Tabellen für die Sensoren DHT22 und SDS011, falls diese noch nicht existieren.
+
+    display_dht22_metric.py
+    Fragt die DHT22-Datenbank für spezifische Messwerte (Temperatur, Luftfeuchtigkeit) ab und zeigt die höchsten, tiefsten und durchschnittlichen Werte für einen bestimmten Tag an.
+
+    print_data_db_dht22.py
+    Zeigt alle gespeicherten DHT22-Daten aus der SQLite-Datenbank an.

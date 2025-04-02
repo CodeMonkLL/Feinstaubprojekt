@@ -7,7 +7,7 @@ db_path = 'feinstaub.db'
 def connect_db():
     try:
         conn = sqlite3.connect(db_path)
-        print(f"Verbindung zur Datenbank erfolgreich! ({db_path})")
+        print("Verbindung zur Datenbank erfolgreich!")
         return conn
     except sqlite3.Error as e:
         print(f"Fehler beim Verbinden mit der Datenbank: {e}")
